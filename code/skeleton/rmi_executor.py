@@ -1,4 +1,5 @@
 from code import skeleton as klass_container
+from code.common.serializable import Serializable
 
 
 class RmiExecutor:
@@ -16,10 +17,14 @@ class RmiExecutor:
     def _parse_object(self):
         inst_json = self._required["instance"]
         klass_name = inst_json["class"]
-        inst_args = inst_json["name"]
         klass = getattr(klass_container, klass_name)
-        obj = klass(inst_args)
-        return obj
+
+        if issubclass(klass, Serializable):
+            inst = klass.load(inst_json)
+        else:
+            raise Exception(f"{klass} is not a Serializable class")
+
+        return inst
 
     def _parse_function(self, obj: object):
         func = getattr(obj, self._required["function"])
