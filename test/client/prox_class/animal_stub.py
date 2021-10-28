@@ -1,15 +1,17 @@
 from code.common.serializable import Serializable
 from code.stub.rmi_invoker import RmiInvoker
+from code.stub.rmi_stub import RmiStub
 from test.client.http_invoke import http_invoke
 
 
-class AnimalStub(Serializable):
+class AnimalStub(RmiStub, Serializable):
 
     def __init__(self):
+        super().__init__(RmiInvoker(http_invoke))
         self._name = "Proxy No.1"
 
     def say_hello(self, peer_name):
-        res = RmiInvoker(http_invoke).invoke()
+        res = self._invoker.invoke()
         return res
 
     def dump(self):
@@ -17,3 +19,6 @@ class AnimalStub(Serializable):
             "name": self._name,
         }
         return json_data
+
+    def set_invoker(self, invoker):
+        self._invoker = invoker

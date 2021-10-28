@@ -17,7 +17,7 @@ def call():
     print(f"\033[33mrequired:\033[0m{required}")
 
     res = RmiExecutor(required).exec()
-    return json.dumps({"result": res}, ensure_ascii=False)
+    return json.dumps({"result": res["rmi_result"]}, ensure_ascii=False)
 
 
 def register_rmi_klass(klass):
