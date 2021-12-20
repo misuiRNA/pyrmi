@@ -1,6 +1,4 @@
-import requests
-
-from test.client.prox_class.animal_stub import AnimalStub
+from test.sample_sync.client.prox_class.animal_stub import AnimalStub
 
 
 def _after_invoke(message):
@@ -15,13 +13,5 @@ def _sync_call():
     print("================ sync done ===================")
 
 
-def do_test_callback():
-    url = "http://localhost:58081/async_call_test"
-    resp = requests.post(url, json={"msg": "cat, it is sync call\nI am very happy\nhia hia hia hia"})
-    print(resp)
-    return resp
-
-
 if __name__ == "__main__":
     _sync_call()
-    # do_test_callback()

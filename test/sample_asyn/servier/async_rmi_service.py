@@ -7,7 +7,7 @@ from flask import Flask, request
 
 from code.skeleton import register_real_class
 from code.skeleton.rmi_executor import RmiExecutor
-from test.servier.real_class.animal import Animal
+from test.sample_sync.servier.real_class.animal import Animal
 
 app = Flask(__name__)
 
