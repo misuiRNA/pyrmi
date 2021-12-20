@@ -1,6 +1,5 @@
 from flask import Flask, request
 
-from test.sample_sync.client.client import _after_invoke
 from code.stub.async_handler import AsyncHandler
 from test.sample_sync.client.prox_class.animal_stub import AnimalStub
 
@@ -27,6 +26,10 @@ def async_call_test():
     AsyncHandler.async_exec(animal.say_hello, [msg], _after_invoke)
     print("================ sync done ===================")
     return "done"
+
+
+def _after_invoke(message):
+    print(f"result: {message}")
 
 
 if __name__ == "__main__":

@@ -29,11 +29,11 @@ def _delay_exec_and_callback(required):
     time.sleep(1)
     print("start callback...")
     res = RmiExecutor(required).exec()
-    http_callback(res)
+    _http_callback(res)
     print("callback done...")
 
 
-def http_callback(req_data):
+def _http_callback(req_data):
     url = "http://localhost:58081/callback"
 
     resp = requests.post(url, json=req_data)
