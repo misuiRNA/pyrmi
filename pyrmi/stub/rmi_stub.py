@@ -1,4 +1,4 @@
-from code.stub.rmi_invoker import RmiInvoker
+from pyrmi.stub.rmi_invoker import RmiInvoker
 
 
 class RmiStub:

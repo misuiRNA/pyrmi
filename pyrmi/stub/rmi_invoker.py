@@ -1,5 +1,5 @@
 import inspect
-from code.common.serializable import Serializable
+from pyrmi.common.serializable import Serializable
 
 
 class RmiInvoker:

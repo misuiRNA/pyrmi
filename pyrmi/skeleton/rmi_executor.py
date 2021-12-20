@@ -1,5 +1,5 @@
-from code import skeleton as klass_container
-from code.common.serializable import Serializable
+from pyrmi import skeleton as klass_container
+from pyrmi.common.serializable import Serializable
 
 
 class RmiExecutor:

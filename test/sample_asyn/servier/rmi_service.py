@@ -5,8 +5,8 @@ from threading import Thread
 import requests
 from flask import Flask, request
 
-from code.skeleton import register_real_class
-from code.skeleton.rmi_executor import RmiExecutor
+from pyrmi.skeleton import register_real_class
+from pyrmi.skeleton.rmi_executor import RmiExecutor
 from test.sample_sync.servier.real_class.animal import Animal
 
 app = Flask(__name__)

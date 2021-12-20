@@ -1,6 +1,6 @@
 from flask import Flask, request
 
-from code.stub.async_handler import AsyncHandler
+from pyrmi.stub.async_handler import AsyncHandler
 from test.sample_sync.client.prox_class.animal_stub import AnimalStub
 
 app = Flask(__name__)

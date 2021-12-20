@@ -1,6 +1,6 @@
-from code.common.serializable import Serializable
-from code.stub.rmi_invoker import RmiInvoker
-from code.stub.rmi_stub import RmiStub
+from pyrmi.common.serializable import Serializable
+from pyrmi.stub.rmi_invoker import RmiInvoker
+from pyrmi.stub.rmi_stub import RmiStub
 from test.sample_sync.client.prox_class.http_invoke import http_invoke
 
 

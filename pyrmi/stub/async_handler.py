@@ -1,4 +1,4 @@
-from code.stub.rmi_stub import RmiStub
+from pyrmi.stub.rmi_stub import RmiStub
 
 
 class AsyncHandler:
