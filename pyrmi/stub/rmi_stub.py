@@ -9,3 +9,6 @@ class RmiStub:
     @property
     def invoker(self):
         return self._invoker
+
+    def set_invoker(self, invoker: RmiInvoker):
+        self._invoker = invoker
